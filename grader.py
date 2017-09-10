@@ -9,26 +9,21 @@ root_path = 'test/'
 answer_src = 'sample.cpp'
 result_file = 'res.txt'
 TLE_time = 2
+output_dir = 'output/'
 _cpp = re.compile("\.cpp$")
-
-
 input_file = 'input.txt'
+
 compiler_cmd = 'g++'
 exe_name = 'a.out'
-
 answer_output = 'standard.out'
 
-output_dir = 'output/'
-
+_TLE = 100
 
 if not os.path.exists(output_dir):
     os.makedirs(output_dir)
 
 files = [join(root_path, f) for f in listdir(root_path) if isfile(join(root_path, f)) and f!=answer_src]
 err_count = 0
-
-
-_TLE = 100
 
 def _compile(f):
     try:
@@ -58,7 +53,6 @@ if _compile(answer_src):
     exit(0)
 print("Run Sample")
 _run(answer_output)
-
 
 with open(result_file, 'w') as result_h:
     for f in files:
@@ -99,5 +93,4 @@ with open(result_file, 'w') as result_h:
         result_h.write('[Pass] ' + f + '\n')
 
     result_h.write('\nErrors ' + str(err_count) + '\n')
-    
     
