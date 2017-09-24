@@ -19,11 +19,11 @@ checkFolder(sample_out_path)
 checkFolder(src_out_path)
 checkFolder(result_indi_path)
 
-input_file_names = list(getFiles(input_path))
-sample_out_files = [join(sample_out_path, f) for f in map(lambda f: f+".out", input_file_names)]
+input_file_names = sorted(list(getFiles(input_path)))
+input_files = sorted(getFilesWithPath(input_path))
 
+sample_out_files = [join(sample_out_path, f) for f in map(lambda f: f+".out", input_file_names)]
 src_files = list(filter(lambda f:f!=sample_src, getFilesWithPath(src_path)))
-input_files = getFilesWithPath(input_path)
 
 print("Compile Sample")
 if do_compile(sample_src):
