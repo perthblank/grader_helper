@@ -2,5 +2,6 @@
 *.swp
 output/
 res.txt
+res*
 a.*
 __pycache__/

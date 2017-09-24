@@ -7,3 +7,4 @@ src_out_path = 'output/'
 sample_out_path = 'sample_output/'
 
 result_file = 'res.txt'
+result_indi_path = 'result_indi'
