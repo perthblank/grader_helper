@@ -9,6 +9,10 @@ from util import *
 
 _cpp = re.compile("\.cpp$")
 
+"""
+_cpp = re.compile("query(\-\d)*\.cpp$")
+"""
+
 err_count = 0
 
 checkFolder(sample_out_path)
